@@ -11,10 +11,9 @@ El programa sólo puede agregar nuevos productos en las categorías, pero no pue
 
 Tiene un ménu en inicio, el  cliente sólo podrá ver la lista de los productos y el staff podrá ver la lista y agregar los productos. Esto significa que, el cliente no podrá agregar productos.
 
-Si los inputs son diferentes a los indicados en la instrucción, el programa dejará de funcionar. Es decir, si en la instrucción se dice "Inserta [SI] o [NO]" pero introduces "HAHA", el programa no podrá detectar la respuesta.
-
 # Consideraciones
 - La contraseña para staff es "8956"
+- Si los inputs son diferentes a los indicados en la instrucción, el programa dejará de funcionar. Es decir, si en la instrucción se dice "Inserta [SI] o [NO]" pero introduces "HAHA", el programa no podrá detectar la respuesta.
 
 # Correciones
 
