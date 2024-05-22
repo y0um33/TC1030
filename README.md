@@ -11,4 +11,9 @@ El programa sólo puede agregar nuevos productos en las categorías, pero no pue
 
 Tiene un ménu en inicio, el  cliente sólo podrá ver la lista de los productos y el staff podrá agregar los productos. Esto significa que, el cliente no podrá agregar productos.
 
-# Consideraciones 
+# Consideraciones
+- La contraseña para staff es "8956"
+- 
+# Correciones
+
+# Subcompetencias
