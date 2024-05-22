@@ -13,7 +13,7 @@ Tiene un ménu en inicio, el  cliente sólo podrá ver la lista de los productos
 
 # Consideraciones
 - La contraseña para staff es "8956"
-- 
+
 # Correciones
 
 # Subcompetencias
