@@ -1,148 +1,161 @@
+/*
+Proyecto
+Yumee Chung
+A01712059
+
+Esta clase defina objeto de tipo Producto que contiene las clases heredadas
+Fruta, Vegetal y Juego
+*/
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
 #include <string>
-
+#include <iostream>
 #include <sstream>
 
 using namespace std;
 
-/*
-Esta clase define el objeto de tipo Producto que contiene las clases
-heredadas a Fruta, Juego y Vegetal
-*/
+class Producto { //clase producto
+    protected: //varaiables de instancia
+    int id;
+    string nombre;
+    double precio;
+    string tipo;
 
-class Producto {
-    //variables de instancia (propias de cada objeto)
-    protected:
-        int num_articulo;
-        string nombre;
-        float precio;
-        string categoria;
-    //métodos
-    public:
-        Producto(): num_articulo(0), nombre(""), precio(0), categoria(""){}; //constructor
-        Producto(int num, string name, float pre, string cat): //sobrecarga
-        num_articulo(num), nombre(name), precio(pre), categoria(cat) {};
-    
-    int get_num() {
-        return num_articulo;
+    public: //métodos
+    Producto(): id(0), nombre(""), precio(0), tipo("") {}; //constructor por default
+    Producto(int num, string nom, double pre, string tip): //sobrecarga
+    id(num), nombre(nom), precio(pre), tipo(tip) {};
+
+    int get_id() {
+        return id;
     }
 
     string get_nombre() {
         return nombre;
     }
 
-    float get_precio() {
+    double get_precio() {
         return precio;
     }
 
-    string get_categoria() {
-        return categoria;
+    string get_tipo() {
+        return tipo;
     }
 
-    virtual int descuento() = 0; //método abstracto será sobreescrito, puede ser redefinido en cualquier clase
+    virtual double descuento() = 0; //método abstracto será sobreescrito
     virtual string to_string() = 0;
 };
 
-class Fruta: public Producto {
-    private:
-        int descuento_producto;
+class Fruta:public Producto { //class fruta heredada métodos de Producto
+    private: double descuento_exac;
+
     public:
-        Fruta(): Producto(0, "", 0, "Fruta") {};
-        Fruta(int num_articulo, string nombre, float precio, int des): Producto(num_articulo, nombre, precio, "fruta"),
-        descuento_producto(des) {};
+    Fruta(): Producto(0,"",0,"Fruta") {}; //constructor default
+    Fruta(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Fruta"), //sobrecarga
+    descuento_exac(des) {};
 
-        int get_num(){
-            return num_articulo;
-        }
+    int get_id() {
+        return id;
+    }
 
-        string get_nombre() {
-            return nombre;
-        }
+    string get_nombre() {
+        return nombre;
+    }
 
-        float get_precio() {
-            return precio; 
-        }
+    double get_precio() {
+        return precio;
+    }
 
-        int descuento() {
-            return descuento_producto + 15; //sobreescrito
-        }
-
-        string to_string();
-};
+    double descuento() { //sobreescrito
+        return descuento_exac; //el contenido es distinto
+    }
+    string to_string();
+}; //Fin de Fruta
 
 /*
-to_string convierte los atributos a string. Concatena todos los valores en un string
-para imprimir
+to_string convierte atributos a string.
+Juntan todos los valores de los atritubos en un string e imprime.
 */
 
 string Fruta::to_string() {
 
     stringstream aux;
-    aux << "Número de artículo: " << num_articulo << "\n" << "El nombre del producto es: " << nombre << ' ' <<
-    "en la categoria de: " << categoria << "\n" << "Su precio es: " << precio << "\n" 
-    << " Su descuento es: " << descuento << "\n";
-    return aux.str();
-    }
-
-class Juego:public Producto {
-    private:
-        int descuento_producto;
-        int rare;
-    public:
-        Juego(): Producto(0, "", 0, "Juego") {}; //constructor
-        Juego(int num_articulo, string nombre, float precio, int des, int ra): Producto(num_articulo, nombre, precio, "Juego"), //sobrecarga
-        descuento_producto(des),
-        rare(ra) {};
-
-        int descuento() {
-            return descuento_producto - rare; //sobreescrito
-        }
-
-        string to_string();
-};
-
-/*
-to_string convierte los atributos a string. Concatena todos los valores en un string
-para imprimir
-*/
-
-string Juego::to_string() {
-
-    stringstream aux;
-    aux << "Número de artículo: " << num_articulo << "\n" << "El nombre del producto es: " << nombre << ' ' <<
-    "en la categoria de: " << categoria << "\n" << "Su precio es: " << precio << "\n" 
-    << " Su descuento es: " << descuento << "\n";
+    aux << "ID es: " << id << endl << "Producto es: " << nombre << endl
+    << "Precio es: " << precio << ' ' << "con un descuento de " << descuento_exac
+    << ' ' << "en la categoría: " << tipo << "\n";
     return aux.str();
 }
 
-class Vegetal:public Producto {
-    private:
-        int descuento_producto;
+class Vegetal: public Producto { //class vegetal heredada métodos de producto
+    private: double descuento_exac;
+
     public:
-        Vegetal(): Producto(0, "", 0, "Vegetal") {}; //constructor
-        Vegetal(int num_articulo, string nombre, float precio, int des): Producto(num_articulo, nombre, precio, "Vegetal"), //sobrecarga
-        descuento_producto(des) {};
+    Vegetal(): Producto(0,"",0,"Vegetal") {};
+    Vegetal(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Vegetal"),
+    descuento_exac(des) {};
 
-        int descuento() {
-            return descuento_producto + 10; //sobreescrito
-        }
+    int get_id() {
+        return id;
+    }
 
-        string to_string();
-};
+    string get_nombre() {
+        return nombre;
+    }
 
-/*
-to_string convierte los atributos a string. Concatena todos los valores en un string
-para imprimir
-*/
+    double get_precio() {
+        return precio;
+    }
+
+    double descuento() {
+        return descuento_exac;
+    }
+    string to_string();
+
+}; //Fin de Vegetal
 
 string Vegetal::to_string() {
 
     stringstream aux;
-    aux << "Número de artículo: " << num_articulo << "\n" << "El nombre del producto es: " << nombre << ' ' <<
-    "en la categoria de: " << categoria << "\n" << "Su precio es: " << precio << "\n" 
-    << " Su descuento es: " << descuento << "\n";
+    aux << "ID es: " << id << endl << "Producto es: " << nombre << endl
+    << "Precio es: " << precio << ' ' << "con un descuento de " << descuento_exac
+    << ' ' << "en la categoría: " << tipo << "\n";
+    return aux.str();
+}
+
+class Juego:public Producto { //class juego heredada métodos de producto
+    private: double descuento_exac;
+
+    public:
+    Juego(): Producto(0,"",0,"Juego") {};
+    Juego(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Juego"),
+    descuento_exac(des) {};
+
+    int get_id() {
+        return id;
+    }
+
+    string get_nombre() {
+        return nombre;
+    }
+
+    double get_precio() {
+        return precio;
+    }
+
+    double descuento() {
+        return descuento_exac;
+    }
+    string to_string();
+
+}; //Fin de Juego
+
+string Juego::to_string() {
+
+    stringstream aux;
+    aux << "ID es: " << id << endl << "Producto es: " << nombre << endl
+    << "Precio es: " << precio << ' ' << "con un descuento de " << descuento_exac
+    << ' ' << "en la categoría: " << tipo << "\n";
     return aux.str();
 }
 
