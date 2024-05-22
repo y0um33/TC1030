@@ -18,6 +18,6 @@ Cliente:
 
 # Consideraciones
 - La contraseña para staff es "8956"
-- Si los inputs son diferentes a los indicados en la instrucción, el programa dejará de funcionar. Es decir, si en la instrucción se dice "Inserta [SI] o [NO]" pero introduces "HAHA", el programa no podrá detectar la respuesta.
+- Si los inputs son diferentes a los indicados en la instrucción, el programa dejará de funcionar. Es decir, si en la instrucción se dice "Inserta [SI] o [NO]" pero introduces "HAHA", el programa no podrá detectar la respuesta. Es necesario poner "SI" o "NO".
 
 # Subcompetencias
