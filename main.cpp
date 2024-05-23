@@ -76,6 +76,7 @@ int main(int argc, char * argv[]) {
                     cin >> temp_desc;
                     tienda.agrega_juego(temp_nombre,temp_precio,temp_desc);
                     cout << "Producto modificado" << endl;
+                    cout << endl;
                     tienda.muestra_productos();
                     }
                     else {
@@ -98,9 +99,17 @@ int main(int argc, char * argv[]) {
         }
 
         if (opcion == 2){
+            cout << endl;
             tienda.crea_productos();
             cout << "Bienvenido a nuestro supermercado: " << endl;
             tienda.muestra_productos();
+            cout << endl;
         } //usuario
     }
+
+    if (opcion == 0)
+    {
+        cout << "Adios" << endl;
+    }
+    
 }; //fin main
