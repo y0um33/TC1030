@@ -49,7 +49,7 @@ el arreglo.
 
 void Tienda::crea_productos() {
 
-    pro[compra] = new Fruta(compra, "Manzana", 32.99, 12);
+    pro[compra] = new Fruta(compra, "Manzana", 32.99, 12); //polimorfismo
     compra++;
     pro[compra] = new Fruta(compra, "Platano", 16.78, 5);
     compra++;
