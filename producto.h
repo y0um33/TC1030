@@ -48,8 +48,10 @@ class Producto { //clase producto
 };
 
 class Fruta:public Producto { //class fruta heredada métodos de Producto
+    //variables de instancia
     private: double descuento_exac;
 
+    //métodos
     public:
     Fruta(): Producto(0,"",0,"Fruta") {}; //constructor default
     Fruta(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Fruta"), //sobrecarga
@@ -88,11 +90,13 @@ string Fruta::to_string() {
 }
 
 class Vegetal: public Producto { //class vegetal heredada métodos de producto
+    //variables de instancia
     private: double descuento_exac;
 
+    //métodos
     public:
-    Vegetal(): Producto(0,"",0,"Vegetal") {};
-    Vegetal(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Vegetal"),
+    Vegetal(): Producto(0,"",0,"Vegetal") {}; //constructor por default
+    Vegetal(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Vegetal"), //sobrecarga
     descuento_exac(des) {};
 
     int get_id() {
@@ -107,12 +111,17 @@ class Vegetal: public Producto { //class vegetal heredada métodos de producto
         return precio;
     }
 
-    double descuento() {
+    double descuento() { //sobreescrito
         return descuento_exac;
     }
     string to_string();
 
 }; //Fin de Vegetal
+
+/*
+to_string convierte atributos a string.
+Juntan todos los valores de los atritubos en un string e imprime.
+*/
 
 string Vegetal::to_string() {
 
@@ -124,11 +133,13 @@ string Vegetal::to_string() {
 }
 
 class Juego:public Producto { //class juego heredada métodos de producto
+    //variables de instancia
     private: double descuento_exac;
 
+    //métodos
     public:
-    Juego(): Producto(0,"",0,"Juego") {};
-    Juego(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Juego"),
+    Juego(): Producto(0,"",0,"Juego") {}; //constructor por default
+    Juego(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Juego"), //sobrecarga
     descuento_exac(des) {};
 
     int get_id() {
@@ -143,12 +154,17 @@ class Juego:public Producto { //class juego heredada métodos de producto
         return precio;
     }
 
-    double descuento() {
+    double descuento() { //sobreescrito
         return descuento_exac;
     }
     string to_string();
 
 }; //Fin de Juego
+
+/*
+to_string convierte atributos a string.
+Juntan todos los valores de los atritubos en un string e imprime.
+*/
 
 string Juego::to_string() {
 
