@@ -3,8 +3,9 @@ Proyecto
 Yumee Chung
 A01712059
 
-Esta clase defina objeto de tipo Producto que contiene las clases heredadas
-Fruta, Vegetal y Juego
+Esta clase define objeto Tienda que contiene 
+todo el proceso para agregar, guardar y muestrar los 
+productos.
 */
 
 #ifndef TIENDA_H
@@ -41,17 +42,32 @@ class Tienda {
 /*
 crea_productos genera objetos en Producto[]
 
-
+genera objetos de Fruta, Vegetal, Juego y los guarda en la variable
+de insancia en pro[] y va incrementando compra ya que está guardando en 
+el arreglo.
 */
+
 void Tienda::crea_productos() {
 
     pro[compra] = new Fruta(compra, "Manzana", 32.99, 12);
     compra++;
+    pro[compra] = new Fruta(compra, "Platano", 16.78, 5);
+    compra++;
     pro[compra] = new Vegetal(compra, "Pepino", 6.99, 1.5);
+    compra++;
+    pro[compra] = new Vegetal(compra, "Lechuga", 14.99, 2);
     compra++;
     pro[compra] = new Juego(compra, "Fortnite", 45.99, 11);
     compra++;
+    pro[compra] = new Juego(compra, "Roblox", 11.89, 20);
+    compra++;
 } //fin crea_productos
+
+/*
+muestra_productos es un método para mostrar los productos.
+Recorre todos los productos en el super mercado hasta 'compra'
+que es el número total.
+*/
 
 void Tienda::muestra_productos() {
     for (int i = 0; i < compra; i++)
@@ -64,6 +80,11 @@ void Tienda::muestra_productos(string tipo) {
             cout << pro[i] -> to_string();
     } 
 } //fin muestra_producto
+
+/*
+'agrega_[]' es un método crea un objeto Fruta,Vegetal,Juego y lo agrega al arreglo de productos
+compra se utiliza cómo para numerar los productos y cuando ya está agregado, incrementa en 1.
+*/
 
 void Tienda::agrega_fruta(string nombre, double precio, double discount) {
     pro[compra] = new Fruta(compra, nombre, precio, discount);
@@ -81,4 +102,6 @@ void Tienda::agrega_juego(string nombre, double precio, double discount) {
 } //fin agrega_juego
 
 #endif
+
+
 
