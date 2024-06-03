@@ -16,6 +16,9 @@ Un cliente del mercado puede:
 
 Al inicio va despejar un menu con opciones iniciales para determinar si es un cliente o staff.
 
+# Casos que va dejar de funcionar
+- No poner ningún signo(+, -, etc.) en el input del precio o otros inputs numéricos
+
 # Consideraciones
 - La contraseña para staff es "8956"
 
