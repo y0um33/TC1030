@@ -1,31 +1,36 @@
 /*
-Proyecto
+Proyecto Supermercado 
 Yumee Chung
 A01712059
+14/06/2024
 
 Esta clase defina objeto de tipo Producto que contiene las clases heredadas
 Fruta, Vegetal y Juego
 */
+
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
 #include <string>
+
 #include <iostream>
+
 #include <sstream>
 
 using namespace std;
 
 class Producto { //clase producto
+
     protected: //varaiables de instancia
-    int id;
-    string nombre;
-    double precio;
-    string tipo;
+        int id;
+        string nombre;
+        double precio;
+        string tipo;
 
     public: //métodos
-    Producto(): id(0), nombre(""), precio(0), tipo("") {}; //constructor por default
-    Producto(int num, string nom, double pre, string tip): //sobrecarga
-    id(num), nombre(nom), precio(pre), tipo(tip) {};
+        Producto(): id(0), nombre(""), precio(0), tipo("") {}; //constructor por default
+        Producto(int num, string nom, double pre, string tip): //sobrecarga
+        id(num), nombre(nom), precio(pre), tipo(tip) {};
 
     int get_id() {
         return id;
@@ -53,9 +58,9 @@ class Fruta:public Producto { //class fruta heredada métodos de Producto
 
     //métodos
     public:
-    Fruta(): Producto(0,"",0,"Fruta") {}; //constructor default
-    Fruta(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Fruta"), //sobrecarga
-    descuento_exac(des) {};
+        Fruta(): Producto(0,"",0,"Fruta") {}; //constructor default
+        Fruta(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Fruta"), //sobrecarga
+        descuento_exac(des) {};
 
     int get_id() {
         return id;
@@ -73,11 +78,15 @@ class Fruta:public Producto { //class fruta heredada métodos de Producto
         return descuento_exac; //el contenido es distinto
     }
     string to_string();
-}; //Fin de Fruta
+}; 
 
 /*
 to_string convierte atributos a string.
+
 Juntan todos los valores de los atritubos en un string e imprime.
+
+@param
+@return string con los valores y textos concatenado
 */
 
 string Fruta::to_string() {
@@ -95,9 +104,9 @@ class Vegetal: public Producto { //class vegetal heredada métodos de producto
 
     //métodos
     public:
-    Vegetal(): Producto(0,"",0,"Vegetal") {}; //constructor por default
-    Vegetal(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Vegetal"), //sobrecarga
-    descuento_exac(des) {};
+        Vegetal(): Producto(0,"",0,"Vegetal") {}; //constructor por default
+        Vegetal(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Vegetal"), //sobrecarga
+        descuento_exac(des) {};
 
     int get_id() {
         return id;
@@ -111,16 +120,20 @@ class Vegetal: public Producto { //class vegetal heredada métodos de producto
         return precio;
     }
 
-    double descuento() { //sobreescrito
+    double descuento() { 
         return descuento_exac;
     }
     string to_string();
 
-}; //Fin de Vegetal
+}; 
 
 /*
 to_string convierte atributos a string.
+
 Juntan todos los valores de los atritubos en un string e imprime.
+
+@param
+@return string con los valores y textos concatenado
 */
 
 string Vegetal::to_string() {
@@ -138,9 +151,9 @@ class Juego:public Producto { //class juego heredada métodos de producto
 
     //métodos
     public:
-    Juego(): Producto(0,"",0,"Juego") {}; //constructor por default
-    Juego(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Juego"), //sobrecarga
-    descuento_exac(des) {};
+        Juego(): Producto(0,"",0,"Juego") {}; //constructor por default
+        Juego(int id, string nombre, double precio, double des):Producto(id,nombre,precio,"Juego"), //sobrecarga
+        descuento_exac(des) {};
 
     int get_id() {
         return id;
@@ -154,16 +167,20 @@ class Juego:public Producto { //class juego heredada métodos de producto
         return precio;
     }
 
-    double descuento() { //sobreescrito
+    double descuento() { 
         return descuento_exac;
     }
     string to_string();
 
-}; //Fin de Juego
+};
 
 /*
 to_string convierte atributos a string.
+
 Juntan todos los valores de los atritubos en un string e imprime.
+
+@param
+@return string con los valores y textos concatenado
 */
 
 string Juego::to_string() {
