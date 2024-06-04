@@ -23,7 +23,6 @@ Al inicio va despejar un menu con opciones iniciales para determinar si es un cl
 # Consideraciones
 - La contraseña para staff es "8956"
 - El código está hecho con C++ estándar entonces se compila sin importar mac o window.
-- 
 
 # Correciones
 - Modificar y corregir la diagrama UML para representar la relación con el contexto
