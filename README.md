@@ -18,7 +18,7 @@ Al inicio va despejar un menu con opciones iniciales para determinar si es un cl
 
 # Casos que va dejar de funcionar
 - No poner ningún signo(+, -, etc.) en el input del precio o otros inputs numéricos
-- La máxima capacidad de productos que tiene el supermercado es 1000
+- La máxima capacidad de productos que tiene el supermercado es 1000, entonces no puede agregar más de 1000
 
 # Consideraciones
 - La contraseña para staff es "8956"
