@@ -18,6 +18,7 @@ Al inicio va despejar un menu con opciones iniciales para determinar si es un cl
 
 # Casos que va dejar de funcionar
 - No poner ningún signo(+, -, etc.) en el input del precio o otros inputs numéricos
+- El máxima capacidad 
 
 # Consideraciones
 - La contraseña para staff es "8956"
