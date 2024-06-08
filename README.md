@@ -27,5 +27,3 @@ Al inicio va despejar un menu con opciones iniciales para determinar si es un cl
 # Correciones
 - Modificar y corregir la diagrama UML para representar la relación con el contexto
 - Modificar el README para informar los casos que hara fallar la programación
-
-# Subcompetencias
