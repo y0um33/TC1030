@@ -16,6 +16,7 @@ int main(int argc, char * argv[]) {
     double temp_desc;
 
     Tienda tienda;
+    tienda.crea_productos();
 
     while (opcion != 0){
         cout << "BIENVENIDO A NUESTRO SUPERMERCADO" << endl;
@@ -30,7 +31,6 @@ int main(int argc, char * argv[]) {
             cin >> constaff;
             if (constaff == 8956) {
                 cout << "Los productos disponibles son: " << endl;
-                tienda.crea_productos();
                 tienda.muestra_productos();
                 cout << "Desea agregar productos? [SI] sino [NO]" << endl;
                 cin >> answer;
@@ -100,7 +100,6 @@ int main(int argc, char * argv[]) {
 
         if (opcion == 2){
             cout << endl;
-            tienda.crea_productos();
             cout << "Bienvenido a nuestro supermercado: " << endl;
             tienda.muestra_productos();
             cout << endl;
